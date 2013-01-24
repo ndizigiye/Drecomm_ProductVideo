@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <productvideo_youtube_api translate="label"
+            module="drecomm_productvideo">
+            <class>separator-top</class>
+            <label>Youtube Api</label>
+            <tab>service</tab>
+            <sort_order>130</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <youtube_api translate="label">
+                    <label>Youtube APi</label>
+                    <sort_order>50</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <productvideo_gmail_email translate="label">
+                            <backend_model>drecomm_productvideo/gmailValidate</backend_model>
+                            <label>Gmail</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </productvideo_gmail_email>
+                    </fields>
+                    <fields>
+                        <productvideo_gmail_password
+                            translate="label">
+                            <backend_model>drecomm_productvideo/gmailValidate</backend_model>
+                            <label>Password</label>
+                            <sort_order>10</sort_order>
+                            <frontend_type>password</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </productvideo_gmail_password>
+                    </fields>
+                    <fields>
+                        <productvideo_gmail_developerkey
+                            translate="label">
+                            <label>Developer Key</label>
+                            <sort_order>20</sort_order>
+                            <frontend_type>text</frontend_type>
+                            <comment>your own developer key from google see: https://code.google.com/apis/console/ </comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </productvideo_gmail_developerkey>
+                    </fields>
+                </youtube_api>
+            </groups>
+        </productvideo_youtube_api>
+    </sections>
+</config>

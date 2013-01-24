@@ -1,0 +1,12 @@
+app/code/community/Drecomm/ProductVideo                        app/code/community/Drecomm/ProductVideo
+app/etc/modules/Drecomm_ProductVideo.xml                       app/etc/modules/Drecomm_ProductVideo.xml
+skin/frontend/base/default/css/prettyPhoto.css                 skin/frontend/base/default/css/prettyPhoto.css
+skin/frontend/base/default/css/video.css                       skin/frontend/base/default/css/video.css
+skin/frontend/base/default/css/video.css                       skin/frontend/base/default/css/video.css
+app/design/adminhtml/default/default/layout/drecomm            app/design/adminhtml/default/default/layout/drecomm
+app/design/frontend/base/default/layout/local.xml              app/design/frontend/base/default/layout/local.xml
+app/design/frontend/base/default/template/video                app/design/frontend/base/default/template/video
+js/video                                                       js/video
+skin/frontend/base/default/images/prettyPhoto                  skin/frontend/base/default/images/prettyPhoto
+skin/frontend/base/default/images/video                        skin/frontend/base/default/images/video
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <catalog_product_view translate="label">
+        <reference name="product.info">
+        <block type="Drecomm_ProductVideo_Block_VideoView"  name="productvideo.videoview" as="videoview"  template="video/video.phtml"></block>
+        <action method="setTemplate"><template>video/view.phtml</template></action>
+        </reference>
+        <reference name="head">
+        <action method="addJs"><script>video/jquery-1.6.1.min.js</script></action>
+        <action method="addJs"><script>video/jquery.prettyPhoto.js</script></action>
+        <action method="addCss"><stylesheet>css/prettyPhoto.css</stylesheet></action>
+        <action method="addCss"><stylesheet>css/video.css</stylesheet></action>
+        </reference>
+    </catalog_product_view>
+</layout>

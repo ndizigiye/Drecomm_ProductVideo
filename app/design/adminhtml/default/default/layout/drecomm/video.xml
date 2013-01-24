@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<layout>
+    <!-- Here, we reference the XML node path of our route -->
+    <default>
+        <reference name="head">
+            <action method="addJs">
+                <script>video/jquery-1.6.1.min.js</script>
+            </action>
+            <action method="addJs">
+                <script>video/form.js</script>
+            </action>
+        </reference>
+    </default>
+    <adminhtml_video_index>
+        <reference name="content">
+            <!-- We also reference our block by namespacename_modulename/adminhtml_controllername, 
+                and name it uniquely -->
+            <block type="drecomm_productvideo/adminhtml_video" name="drecomm_productvideo_video" />
+        </reference>
+    </adminhtml_video_index>
+</layout>

@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+
+#videowrapper{
+
+    display:block;
+
+}
+
+.videothumbnail{
+    border-style:solid;
+    border-width:1px;
+    position:relative;
+    margin: 2px;
+    padding: 2px;
+    float: left;
+}
+.videoplay_button{
+    position:absolute;
+    left:40px;
+    top:30px;
+}
+
+.videoblock{
+    display:block;
+}
+
+.videoreset{
+    clear:both;
+}

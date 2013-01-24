@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Drecomm_ProductVideo>
+            <version>0.1.3</version>
+        </Drecomm_ProductVideo>
+    </modules>
+
+    <global>
+        <helpers>
+            <drecomm_productvideo>
+                <class>Drecomm_ProductVideo_Helper</class>
+            </drecomm_productvideo>
+        </helpers>
+
+        <blocks>
+            <drecomm_productvideo>
+                <class>Drecomm_ProductVideo_Block</class>
+            </drecomm_productvideo>
+            <adminhtml>
+                <rewrite> <!-- de tab block overriden om een nieuwe tab toe te voegen -->
+                    <catalog_product_edit_tabs>Drecomm_ProductVideo_Block_Adminhtml_Tabs</catalog_product_edit_tabs>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+
+        <models>
+            <drecomm_productvideo>
+                <class>Drecomm_ProductVideo_Model</class>
+                <resourceModel>drecomm_productvideo_resource</resourceModel>
+            </drecomm_productvideo>
+
+            <drecomm_productvideo_resource>
+                <class>Drecomm_ProductVideo_Model_Resource</class>
+                <entities>
+                    <video>
+                        <table>catalog_product_entity_media_video</table>
+                    </video>
+                </entities>
+            </drecomm_productvideo_resource>
+        </models>
+
+        <!-- And finally we define our resource setup script -->
+        <resources>
+            <drecomm_productvideo_setup>
+                <setup>
+                    <module>Drecomm_ProductVideo</module>
+                </setup>
+            </drecomm_productvideo_setup>
+        </resources>
+    </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Drecomm_ProductVideo before="Mage_Adminhtml">Drecomm_ProductVideo_Adminhtml</Drecomm_ProductVideo>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <drecomm_productvideo>
+                    <file>drecomm/video.xml</file>
+                </drecomm_productvideo>
+            </updates>
+        </layout>
+            <acl>
+                <resources>
+                    <admin>
+                        <children>
+                            <system>
+                                <children>
+                                    <config>
+                                        <children>
+                                            <productvideo_youtube_api translate="title" module="drecomm_productvideo">
+                                                <title>Youtube API ACL</title>
+                                            </productvideo_youtube_api>
+                                        </children>
+                                    </config>
+                                </children>
+                            </system>
+                        </children>
+                    </admin>
+                </resources>
+            </acl>
+    </adminhtml>
+    <frontend>
+        <layout>
+            <updates>
+                <drecomm_productvideo>
+                    <file>drecomm/video.xml</file>
+                </drecomm_productvideo>
+            </updates>
+        </layout>
+    </frontend>
+</config>

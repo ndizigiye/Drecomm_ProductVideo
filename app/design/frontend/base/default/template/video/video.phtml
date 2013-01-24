@@ -1,0 +1,61 @@
+<ul class="gallery clearfix">
+</ul>
+<ul class="gallery clearfix">
+    <?php
+    $videoUrls = $this->getVideosUrl();
+    $global_helper = Mage::Helper('drecomm_productvideo/global');
+    if(!empty($videoUrls)){
+    ?>
+    <h2>
+        <?php echo $this->__('Videos')?>
+    </h2>
+    <div id="videowrapper">
+        <?php
+        foreach($videoUrls as $video)
+        {
+            if($global_helper->getVideoFormat($video) == 'youtube' && $global_helper->getStatus($video) == "enabled")
+            {
+                echo '<div class="videothumbnail">';
+                echo '<img class="thumbnail" src="'.str_replace("~", "",$this->getYoutubeVideoThumbnail($video)).'"/>';
+                echo '<div class="videoplay_button">';
+                echo  '<li><a href="http://www.youtube.com/watch?v='.str_replace(" [uploaded]", "",$global_helper->getYoutubeVideoId($video)).'" rel="prettyPhoto" title="'.$this->getYoutubeVideoTitle($video).'"><img src="'.$this->getSkinUrl('images/video/play_button.png').'" /></a></li>' ;
+                echo '</div>';
+                echo '</div>';
+            }
+            else if($global_helper->getVideoFormat($video) == 'vimeo' && $global_helper->getStatus($video) == "enabled")
+            {
+                echo '<div class="videothumbnail">';
+                echo '<img class="thumbnail" src="'.$this->getVimeoVideoThumbnail($video).'" width="120px" height="90px"/>';
+                echo '<div class="videoplay_button">';
+                echo '<li><a href="http://vimeo.com/'.$global_helper->getVimeoVideoId($video).'" rel="prettyPhoto" title="'.$this->getVimeoVideoTitle($video).'"><img src="'.$this->getSkinUrl('images/video/play_button.png').'" /></a></li>';
+                echo '</div>';
+                echo '</div>';
+            }
+        }
+        ?>
+    </div>
+<?php }?>
+</ul>
+
+
+<?php // ----------------------------------javascript voor de prettyPhoto lightbox //style= "position:relative; left:50px; bottom:60px; "------------------------------------------------------------------ ?>
+
+<script type="text/javascript" charset="utf-8">
+var $j = jQuery.noConflict();
+$j(document).ready(function(){
+    $j("area[rel^='prettyPhoto']").prettyPhoto();
+
+    $j(".gallery:first a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'normal',theme:'light_square',slideshow:3000, autoplay_slideshow: true});
+    $j(".gallery:gt(0) a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'fast',slideshow:10000, hideflash: true});
+
+    $j("#custom_content a[rel^='prettyPhoto']:first").prettyPhoto({
+                    custom_markup: '<div id="map_canvas" style="width:260px; height:265px"></div>',
+                    changepicturecallback: function(){ initialize(); }
+                });
+
+    $j("#custom_content a[rel^='prettyPhoto']:last").prettyPhoto({
+                    custom_markup: '<div id="bsap_1259344" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div><div id="bsap_1237859" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6" style="height:260px"></div><div id="bsap_1251710" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div>',
+                    changepicturecallback: function(){ _bsap.exec(); }
+                });
+            });
+</script>
