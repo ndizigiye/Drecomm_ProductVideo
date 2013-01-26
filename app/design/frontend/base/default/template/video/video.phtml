@@ -10,6 +10,8 @@
         <?php echo $this->__('Videos')?>
     </h2>
     <div id="videowrapper">
+    <script type="text/javascript" src="<?php echo str_replace("index.php","",$this->getBaseUrl()).'/js/video/jquery-1.6.1.min.js' ?>"></script>
+	<script type="text/javascript" src="<?php echo str_replace("index.php","",$this->getBaseUrl()).'/js/video/jquery.prettyPhoto.js' ?>"></script>
         <?php
         foreach($videoUrls as $video)
         {

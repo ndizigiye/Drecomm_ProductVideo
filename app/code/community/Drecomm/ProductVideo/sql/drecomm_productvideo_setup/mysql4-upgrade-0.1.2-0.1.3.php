@@ -22,6 +22,6 @@ if ($installer->getConnection()->tableColumnExists($videoTable, 'path'))
 $installer->getConnection()->addColumn(
         $videoTable,
         'status',
-        'varchar (8) NOT NULL DEFAULT "enabled" '
+        'varchar (288) NOT NULL DEFAULT "enabled" '
 );
 $installer->endSetup();
